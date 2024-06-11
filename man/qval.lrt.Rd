@@ -115,7 +115,6 @@ qvals <- qval.lrt(lrt, df=1, one.sided=TRUE)
 pvals <- qvals$pvals
 i <- rank(pvals, ties="max")
 hist(pvals, n=div, ylim=ylim, main="", prob=TRUE)
-abline(1, 0, lty=2); abline(qvals$qvals.stR$pi0, 0, lty=2, col="red")
 plot(i/N, pvals, pch=pch, cex=cex); abline(0, 1)
 # Observed FDR:
 1 - sum(qvals$qvals.bh$qvalues[1:n1] < .05) / sum(qvals$qvals.bh$qvalues < .05)
