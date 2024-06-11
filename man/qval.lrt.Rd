@@ -32,7 +32,7 @@ way.
 
 If \code{one.sided = TRUE}, p-values are first divided by two (see Self and
 Liang, 1987), and the BH and ST q-values are calculated. In the case of ST,
-the proportion of true null tests is estimated as \eqn{\pi_0 = \max(1,
+the proportion of true null tests is estimated as \eqn{\pi_0 = \min(1,
 2n_0/N)}, where \eqn{n_0} is the number of tests with LRT equal to zero
 (p-values equal to one) and \eqn{N} is the total number of tests, and then
 used to obtain the q-values. An alternative robust form of the ST method
