@@ -1,0 +1,12 @@
+Package: qval.lrt
+Type: Package
+Title: Calculate False Discovery Rate Likelihood-Ratio Tests
+Version: 0.1.0
+Author: Mario dos Reis
+Maintainer: Mario dos Reis <mariodosreis@gmail.com>
+Description: Calculates q-values using the BH and ST FDR methods using 
+   likelihood-ration statistics as input.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.1
