@@ -1,6 +1,6 @@
 Package: qval.lrt
 Type: Package
-Title: Calculate False Discovery Rate Likelihood-Ratio Tests
+Title: Calculate False Discovery Rate from Likelihood-Ratio Tests
 Version: 0.1.0
 Author: Mario dos Reis
 Maintainer: Mario dos Reis <mariodosreis@gmail.com>
