@@ -4,16 +4,17 @@
 #' @param df numeric, degrees of freedom
 #' @param one.sided logical, whether the test is one-sided
 #'
-#' @description
+#' @details
 #' P-values are calculated from the \code{lrt} values using a chi-squared
-#' distribution with \code{df} degrees of freedom. Q-values, which control the
-#' false-discovery rate, are then calculated using \code{qvalue::qvalue}.
+#' distribution with \code{df} degrees of freedom. The q-values, which control the
+#' false-discovery rate, are then calculated using the \code{qvalue} function from
+#' the \code{qvalue} package.
 #'
 #' If \code{one.sided = FALSE}, q-values are calculated using Benjamini and
 #' Hochber (1995, BH) and Storey and Tibshirani (2003, ST) methods in the usual
 #' way.
 #'
-#' If \code{one.sided = TRUE}, p-values are first divided by two (see Self and
+#' If \code{one.sided = TRUE}, p-values are first divided by two (Self and
 #' Liang, 1987), and the BH and ST q-values are calculated. In the case of ST,
 #' the proportion of true null tests is estimated as \eqn{\pi_0 = \min(1,
 #' 2n_0/N)}, where \eqn{n_0} is the number of tests with LRT equal to zero
@@ -90,7 +91,7 @@
 #' 1 - sum(qvals$qvals.st$qvalues[1:n1] < .05) / sum(qvals$qvals.st$qvalues < .05)
 #'
 #' # H0: mu = 0; H1: mu > 0
-#' # *** H0 is not always true: ***
+#' # *** H0 is not always true: (test is one-sided)***
 #' lrt <- apply(rbind(x1, x0), 1, lrt.norm.onesided)
 #' qvals <- qval.lrt(lrt, df=1, one.sided=TRUE)
 #' pvals <- qvals$pvals
@@ -105,7 +106,7 @@
 #' 1 - sum(qvals$qvals.stR$qvalues[1:n1] < .05) / sum(qvals$qvals.stR$qvalues < .05)
 #'
 #' # H0: mu = 0; H1: mu > 0
-#' # *** H0 is not always true: ***
+#' # *** H0 is not always true: (test is one-sided) ***
 #' # *** H0 is misspecified in some tests ***
 #' p0 <- p0. <- .45; p1 <- 1 - p0 - p0.; mu. <- -.1
 #' n0 <- round(p0 * N)
@@ -120,6 +121,7 @@
 #' i <- rank(pvals, ties="max")
 #' hist(pvals, n=div, ylim=ylim, main="", prob=TRUE)
 #' plot(i/N, pvals, pch=pch, cex=cex); abline(0, 1)
+#'
 #' # Observed FDR:
 #' 1 - sum(qvals$qvals.bh$qvalues[1:n1] < .05) / sum(qvals$qvals.bh$qvalues < .05)
 #' 1 - sum(qvals$qvals.st$qvalues[1:n1] < .05) / sum(qvals$qvals.st$qvalues < .05)

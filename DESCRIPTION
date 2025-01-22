@@ -5,7 +5,8 @@ Version: 0.1.0
 Author: Mario dos Reis
 Maintainer: Mario dos Reis <mariodosreis@gmail.com>
 Description: Calculates q-values using the BH and ST FDR methods using 
-   likelihood-ration statistics as input.
+   likelihood-ratio statistics as input.
+Imports: qvalue
 License: MIT
 Encoding: UTF-8
 LazyData: true
